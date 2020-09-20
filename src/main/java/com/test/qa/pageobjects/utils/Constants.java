@@ -75,4 +75,6 @@ public class Constants {
 
 	public static final String FILENAME_TXT = "some-file.txt";
 	public static final String UPLOAD_HEADER = "File Uploaded!";
-}	
+    public static final String LOGIN_INVALID_USER_NAME = "dinindu-iron-man";
+	public static final String LOGIN_INVALID_PASSWORD = "abcd1234";
+}

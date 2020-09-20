@@ -183,5 +183,15 @@ public class UiAutomationTrainingBasicTest extends TestBase {
         //Todo - Click Submit
         //Todo - Verify Invalid Login Alert Displayed
         //Todo - Verify Invalid Login  Alert Message Content
+
+		softAssert = new SoftAssert();
+		softAssert.assertTrue(HomePage.isHomePageDisplayed(),"Home Page is not Displayed");
+		HomePage.clickLink(Constants.LOGIN_LINK);
+		LoginPage.setUsername(Constants.LOGIN_INVALID_USER_NAME);
+		LoginPage.setPassword(Constants.LOGIN_INVALID_PASSWORD);
+		LoginPage.clickSubmit();
+		softAssert.assertTrue(LoginPage.isAlertDisplayed(),"Invalied Login Alert is not Displayed");
+		softAssert.assertTrue(LoginPage.getAlertContent().contains(Constants.LOGIN_INVALID_MSG),"Invalied Message is incorrect");
+		softAssert.assertAll();
 	}
 }
